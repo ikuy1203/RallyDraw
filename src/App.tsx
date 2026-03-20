@@ -1,9 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
-import { MatchSettingProvider } from './components/MatchSettingProvider';
-import { PageBar } from './components/PageBar';
-import { MatchPage } from './pages/match';
-import { SettingPage } from './pages/setting';
+import { MatchSettingProvider } from '@/components/MatchSettingProvider';
+import { PageBar } from '@/components/PageBar';
+import { MatchPage } from '@/pages/match';
+import { SettingPage } from '@/pages/setting';
 
 // Standard MUI theme with some brand color adjustments
 const theme = createTheme({

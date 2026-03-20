@@ -1,4 +1,4 @@
-import { MIN_PLAYERS } from '../consts/players.const';
+import { MIN_PLAYERS } from '@/consts/players.const';
 
 export const useMatchPair = (
   match: number,

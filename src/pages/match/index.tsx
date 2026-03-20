@@ -11,8 +11,8 @@ import {
   Tabs,
   Typography,
 } from '@mui/material';
-import { useMatchSetting } from '../../contexts/MatchSettingContext';
-import { getTotalMatches, useMatchPair } from '../../hooks/useMatchPair';
+import { useMatchSetting } from '@/contexts/MatchSettingContext';
+import { getTotalMatches, useMatchPair } from '@/hooks/useMatchPair';
 
 export const MatchPage = () => {
   const { playerCount, courtSelection, round, setRound } = useMatchSetting();

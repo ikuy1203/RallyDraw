@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
-import { MatchSettingContext } from '../contexts/MatchSettingContext';
+import { MatchSettingContext } from '@/contexts/MatchSettingContext';
 
 export const MatchSettingProvider = ({ children }: { children: ReactNode }) => {
   const [playerCount, setPlayerCount] = useState<number>(8);

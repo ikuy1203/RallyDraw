@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { Bolt as BoltIcon } from '@mui/icons-material';
 import {
   Box,
@@ -11,8 +11,8 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import { MAX_PLAYERS, MIN_PLAYERS } from '../../consts/players.const';
-import { useMatchSetting } from '../../contexts/MatchSettingContext';
+import { MAX_PLAYERS, MIN_PLAYERS } from '@/consts/players.const';
+import { useMatchSetting } from '@/contexts/MatchSettingContext';
 
 export const SettingPage = () => {
   const {
