@@ -1,36 +1,50 @@
-import { useState } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { MatchSettingProvider } from './components/MatchSettingProvider';
+import { PageBar } from './components/PageBar';
+import { MatchPage } from './pages/match';
+import { SettingPage } from './pages/setting';
 
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+// Standard MUI theme with some brand color adjustments
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#00113a',
+    },
+    secondary: {
+      main: '#c3f400',
+    },
+    background: {
+      default: '#faf8ff',
+    },
+  },
+  typography: {
+    h6: {
+      fontWeight: 700,
+    },
+  },
+  shape: {
+    borderRadius: 12,
+  },
+});
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <MatchSettingProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/*" element={<PageBar />}>
+              <Route path="" element={<Navigate replace to="settings" />} />
+              <Route path="match" element={<MatchPage />} />
+              <Route path="settings" element={<SettingPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </MatchSettingProvider>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
