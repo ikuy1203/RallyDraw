@@ -8,7 +8,7 @@ import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 export const NavigationBar = () => {
   const location = useLocation();
 
-  const navValue = location.pathname === '/match' ? 'leaderboard' : 'settings';
+  const navValue = location.pathname;
   const navigate = useNavigate();
 
   return (
@@ -19,21 +19,17 @@ export const NavigationBar = () => {
       <BottomNavigation
         showLabels
         value={navValue}
-        onChange={(_, newValue) =>
-          void navigate(newValue === 'leaderboard' ? '/match' : '/settings')
-        }
+        onChange={(_, newValue) => void navigate(newValue as string)}
       >
         <BottomNavigationAction
           label="対戦表"
-          value="leaderboard"
+          value="/match"
           icon={<LeaderboardIcon />}
-          onClick={() => void navigate('/match')}
         />
         <BottomNavigationAction
           label="設定"
-          value="settings"
+          value="/settings"
           icon={<SettingsIcon />}
-          onClick={() => void navigate('/settings')}
         />
       </BottomNavigation>
     </Paper>

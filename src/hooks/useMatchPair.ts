@@ -3,7 +3,11 @@ export const useMatchPair = (
   players: number,
   _courts: number,
 ) => {
-  return matchPairs[players - 4][match % matchPairs[players - 4].length];
+  const data = matchPairs[players - 4];
+
+  if (!data) return [];
+
+  return data[match % data.length] || [];
 };
 
 export const getTotalMatches = (players: number) => {

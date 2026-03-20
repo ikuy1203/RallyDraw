@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bolt as BoltIcon } from '@mui/icons-material';
 import {
@@ -11,11 +11,11 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import { MatchSettingContext } from '../../contexts/MatchSettingContext';
+import { useMatchSetting } from '../../contexts/MatchSettingContext';
 
 export const SettingPage = () => {
   const { playerCount, setPlayerCount, courtSelection, setCourtSelection } =
-    useContext(MatchSettingContext);
+    useMatchSetting();
   const [formPlayerCount, setFormPlayerCount] = useState(playerCount);
   const [formCourtSelection, setFormCourtSelection] = useState(courtSelection);
 

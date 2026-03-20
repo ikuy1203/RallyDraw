@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import {
   Box,
   Button,
@@ -12,11 +12,11 @@ import {
   Tabs,
   Typography,
 } from '@mui/material';
-import { MatchSettingContext } from '../../contexts/MatchSettingContext';
+import { useMatchSetting } from '../../contexts/MatchSettingContext';
 import { getTotalMatches, useMatchPair } from '../../hooks/useMatchPair';
 
 export const MatchPage = () => {
-  const { playerCount, courtSelection } = useContext(MatchSettingContext);
+  const { playerCount, courtSelection } = useMatchSetting();
   const [round, setRound] = useState(0);
   const matchPairs = useMatchPair(round, playerCount, courtSelection.length);
   const totalMatches = getTotalMatches(playerCount);
