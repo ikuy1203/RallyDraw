@@ -63,7 +63,7 @@ export const SettingPage = () => {
             </Box>
             <Box sx={{ py: 0, px: 1 }}>
               <Slider
-                value={formPlayerCount}
+                defaultValue={formPlayerCount}
                 onChange={(_, value) => setFormPlayerCount(value)}
                 min={MIN_PLAYERS}
                 max={MAX_PLAYERS}
