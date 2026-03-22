@@ -1,11 +1,15 @@
-import { SportsTennis as BadmintonIcon } from '@mui/icons-material';
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import BadmintonIcon from '@/assets/icon.png';
 
 export const TitleBar = () => {
   return (
     <AppBar position="sticky" color="inherit" elevation={1}>
       <Toolbar>
-        <BadmintonIcon sx={{ mr: 1, color: 'primary.main' }} />
+        <img
+          src={BadmintonIcon}
+          alt="Badminton Icon"
+          style={{ marginRight: 8, width: 24, height: 24 }}
+        />
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           RALLY DRAW
         </Typography>
